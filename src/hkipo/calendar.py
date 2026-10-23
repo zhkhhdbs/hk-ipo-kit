@@ -7,7 +7,7 @@ from pathlib import Path
 class Ipo:
     name: str; code: str; open_date: str; close_date: str
     listing_date: str; price_low: float; price_high: float; lot_size: int
-    
+
 def load_calendar(path: str | Path) -> list[Ipo]:
     with open(path, newline="", encoding="utf-8") as f:
         return [Ipo(name=r["name"], code=r["code"], open_date=r["open_date"],
