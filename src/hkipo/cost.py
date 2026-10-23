@@ -40,4 +40,4 @@ def entry_cost(price: float, lot_size: int, lots: int = 1,
         brokerage=round(amount * brokerage_rate, 2),
         sfc_levy=round(amount * SFC_LEVY, 2),
         hkex_fee=round(amount * HKEX_FEE, 2),
-                   frc_levy=round(amount * FRC_LEVY, 2))
+        frc_levy=round(amount * FRC_LEVY, 2))
