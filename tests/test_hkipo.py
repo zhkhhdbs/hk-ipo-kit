@@ -11,11 +11,13 @@ def test_entry_cost_one_lot():
     assert 50.0 < r.total_fees < 51.0  # 1% brokerage + ~0.0085% levies/fees
 
 def test_entry_cost_zero_brokerage_waiver():
-    r = entry_cost(price=12.0, lot_size=100, lots=2, brokerage_rate=0.0)    assert r.brokerage == 0.0 and r.application_amount == 2400.0def test_entry_cost_rejects_nonpositive():
+    r = entry_cost(price=12.0, lot_size=100, lots=2, brokerage_rate=0.0)
+    assert r.brokerage == 0.0 and r.application_amount == 2400.0
+    
+    def test_entry_cost_rejects_nonpositive():
     try:
         entry_cost(price=0, lot_size=100); assert False
-    except ValueError: pass
-
+            except ValueError: pass
 def test_calendar_filter():
     rows = load_calendar(Path(__file__).parent.parent / "data" / "sample_ipos.csv")
     assert len(open_for_subscription(rows, "2026-10-22")) == 1
