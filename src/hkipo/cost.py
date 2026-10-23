@@ -29,7 +29,7 @@ class EntryCost:
     @property
     def total_cost(self) -> float:
         return self.application_amount + self.total_fees
-        
+
 def entry_cost(price: float, lot_size: int, lots: int = 1,
                brokerage_rate: float = 0.01) -> EntryCost:
     if price <= 0 or lot_size <= 0 or lots <= 0:
@@ -39,5 +39,5 @@ def entry_cost(price: float, lot_size: int, lots: int = 1,
     return EntryCost(shares=shares, application_amount=round(amount, 2),
         brokerage=round(amount * brokerage_rate, 2),
         sfc_levy=round(amount * SFC_LEVY, 2),
-                             hkex_fee=round(amount * HKEX_FEE, 2),
-                     d(amount * FRC_LEVY, 2))
+        hkex_fee=round(amount * HKEX_FEE, 2),
+                   frc_levy=round(amount * FRC_LEVY, 2))
