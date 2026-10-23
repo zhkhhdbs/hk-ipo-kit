@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "hk-ipo-kit"
+version = "0.0.2"
+description = "A small Python toolkit for Hong Kong IPO research: subscription calendar and true entry-fee calculation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+[project.scripts]
+hkipo = "hkipo.__main__:main"
+[tool.setuptools.packages.find]
+where = ["src"]
