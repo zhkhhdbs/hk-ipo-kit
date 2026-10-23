@@ -11,7 +11,8 @@ def main() -> None:
     c.add_argument("--lots", type=int, default=1)
     c.add_argument("--brokerage-rate", type=float, default=0.01)
     cal = sub.add_parser("calendar", help="list IPOs open on a date")
-    cal.add_argument("--file", required=True)    cal.add_argument("--on", required=True, help="ISO date yyyy-mm-dd")
+    cal.add_argument("--file", required=True)
+    cal.add_argument("--on", required=True, help="ISO date yyyy-mm-dd")
     a = p.parse_args()
     if a.cmd == "cost":
         r = entry_cost(a.price, a.lot_size, a.lots, a.brokerage_rate)
