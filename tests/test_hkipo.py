@@ -18,8 +18,8 @@ def test_entry_cost_rejects_nonpositive():
     try:
         entry_cost(price=0, lot_size=100); assert False
     except ValueError: pass
-        
-    def test_calendar_filter():
+
+def test_calendar_filter():
     rows = load_calendar(Path(__file__).parent.parent / "data" / "sample_ipos.csv")
     assert len(open_for_subscription(rows, "2026-10-22")) == 1
     assert len(open_for_subscription(rows, "2026-10-24")) == 0
