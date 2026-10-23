@@ -17,7 +17,9 @@ notices and exchange filings:
 pip install hk-ipo-kit        # planned for v0.1.0
 # from source:
 pip install -e .
-```## Examples
+```
+
+## Examples
 ```bash
 hkipo cost --price 10 --lot-size 500
 # Shares: 500  Application: HK$5,000.00  Fees: HK$50.42  Total entry: HK$5,050.42
