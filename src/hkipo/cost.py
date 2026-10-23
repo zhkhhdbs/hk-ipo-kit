@@ -21,12 +21,14 @@ class EntryCost:
     application_amount: float
     brokerage: float
     sfc_levy: float
-    hkex_fee: float    frc_levy: float
+    hkex_fee: float
+    frc_levy: float
     @property
     def total_fees(self) -> float:
         return self.brokerage + self.sfc_levy + self.hkex_fee + self.frc_levy
-    @property    def total_cost(self) -> float:
-        return self.application_amount + self.total_fees
+    @property
+    def total_cost(self) -> float:
+    return self.application_amount + self.total_fees
 
 def entry_cost(price: float, lot_size: int, lots: int = 1,
                brokerage_rate: float = 0.01) -> EntryCost:
@@ -35,6 +37,7 @@ def entry_cost(price: float, lot_size: int, lots: int = 1,
     shares = lot_size * lots
     amount = price * shares
     return EntryCost(shares=shares, application_amount=round(amount, 2),
-        brokerage=round(amount * brokerage_rate, 2),        sfc_levy=round(amount * SFC_LEVY, 2),
-        hkex_fee=round(amount * HKEX_FEE, 2),
+        brokerage=round(amount * brokerage_rate, 2),
+                     sfc_levy=round(amount * SFC_LEVY, 2),
+                     hkex_fee=round(amount * HKEX_FEE, 2),
         frc_levy=round(amount * FRC_LEVY, 2))
