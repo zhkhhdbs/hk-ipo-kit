@@ -7,7 +7,18 @@ version = "0.0.2"
 description = "A small Python toolkit for Hong Kong IPO research: subscription calendar and true entry-fee calculation."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "zhkhhdbs" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+[project.urls]
+Homepage = "https://github.com/zhkhhdbs/hk-ipo-kit"
+Repository = "https://github.com/zhkhhdbs/hk-ipo-kit"
+Issues = "https://github.com/zhkhhdbs/hk-ipo-kit/issues"
 [project.scripts]
 hkipo = "hkipo.__main__:main"
 [tool.setuptools.packages.find]
